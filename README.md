@@ -127,21 +127,13 @@ pip install -r requirements.txt
 
 ### 4. Configuration des Modèles IA
 
-⚠️ **Important**: Les fichiers de poids des modèles IA sont trop volumineux pour être inclus dans le repository Git (>234MB chacun).
+⚠️ **Important**: Les modèles IA sont requis pour le fonctionnement du système.
 
-**Option 1: Script de configuration automatique (Recommandé)**
-```bash
-# Créer la structure des dossiers
-python setup_models.py
-
-# Vérifier les modèles installés
-python setup_models.py check
-```
-
-**Option 2: Télécharger depuis GitHub Releases**
-1. Aller à la page [Releases](https://github.com/IMADKHKHALIFI/MaroPlate-AI/releases)
-2. Télécharger la dernière release contenant les modèles
-3. Extraire les fichiers dans `backend/weights/`:
+**🚀 Méthode Simple (Recommandée)**
+1. **Aller aux Releases**: [GitHub Releases](https://github.com/IMADKHKHALIFI/MaroPlate-AI/releases)
+2. **Télécharger**: `ai-models-v1.0.zip` (~470MB)
+3. **Extraire**: Le fichier zip 
+4. **Copier**: Tous les fichiers vers `backend/weights/` en respectant cette structure:
    ```
    backend/weights/
    ├── detection/
@@ -152,10 +144,13 @@ python setup_models.py check
        └── yolov3-ocr.cfg
    ```
 
-**Option 3: Modèles personnalisés**
-- Vous pouvez utiliser vos propres modèles YOLOv3 entraînés
-- Placez les fichiers `.weights` et `.cfg` dans les dossiers appropriés
-- Assurez-vous que les noms correspondent à ceux attendus dans le code
+**⚡ Script Automatique (Alternative)**
+```bash
+# Depuis la racine du projet
+python backend/setup_models.py
+```
+
+💡 **Note**: Les modèles font ~470MB au total. Assurez-vous d'avoir suffisamment d'espace disque.
 
 ## ⚙️ Configuration
 
@@ -335,6 +330,17 @@ GET /api/metrics
 
 ## 🐛 Résolution de Problèmes
 
+### Modèles IA manquants
+```bash
+# Vérifier l'état des modèles
+python backend/setup_models.py check
+```
+**Symptômes**: Erreur "modèle non trouvé" ou "weights file not found"
+**Solution**: 
+1. Télécharger `ai-models-v1.0.zip` depuis [GitHub Releases](https://github.com/IMADKHKHALIFI/MaroPlate-AI/releases)
+2. Extraire dans `backend/weights/`
+3. Vérifier avec `python backend/setup_models.py check`
+
 ### Backend ne démarre pas
 1. Vérifier l'installation de Python et pip
 2. Installer les dépendances : `pip install -r requirements.txt`
@@ -344,11 +350,13 @@ GET /api/metrics
 1. S'assurer que le backend fonctionne sur le port 5000
 2. Vérifier la connexion réseau
 3. Contrôler les logs dans la console du navigateur
+4. Vérifier que les modèles IA sont installés
 
 ### Performance lente
 1. Vérifier les ressources système (RAM, CPU)
 2. Optimiser la taille des images d'entrée
 3. Utiliser un SSD pour le stockage
+4. S'assurer d'avoir 8GB+ de RAM disponible
 
 ## 📊 Métriques et KPIs
 
