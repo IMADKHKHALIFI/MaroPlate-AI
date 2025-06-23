@@ -6,7 +6,7 @@ import { GalleryItem } from "@/lib/store/gallery-store"
 // Get API key - try multiple sources
 const getAPIKey = () => {
   const envKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY
-  const fallbackKey = "AIzaSyDzcMOQy88yVjdEOBSwJlfk9cEHIJCZXYw"
+  const fallbackKey = "***********"
   
   console.log("Environment API Key:", envKey ? "Found" : "Not found")
   return envKey || fallbackKey

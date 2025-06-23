@@ -25,3 +25,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Security - API keys and sensitive files
+apikey.txt
+**/apikey.txt
+*.key
+*.secret
+
+# Git configuration (hide .gitignore itself)
+.gitignore
+
+# Backend specific ignores
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+backend/tmp/
