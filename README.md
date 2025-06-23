@@ -127,12 +127,35 @@ pip install -r requirements.txt
 
 ### 4. Configuration des Modèles IA
 
-1. Télécharger les poids des modèles YOLOv3
-2. Placer les fichiers dans `backend/weights/`:
-   - `detection/yolov3-detection_final.weights`
-   - `detection/yolov3-detection.cfg`
-   - `ocr/yolov3-ocr_final.weights`
-   - `ocr/yolov3-ocr.cfg`
+⚠️ **Important**: Les fichiers de poids des modèles IA sont trop volumineux pour être inclus dans le repository Git (>234MB chacun).
+
+**Option 1: Script de configuration automatique (Recommandé)**
+```bash
+# Créer la structure des dossiers
+python setup_models.py
+
+# Vérifier les modèles installés
+python setup_models.py check
+```
+
+**Option 2: Télécharger depuis GitHub Releases**
+1. Aller à la page [Releases](https://github.com/IMADKHKHALIFI/MaroPlate-AI/releases)
+2. Télécharger la dernière release contenant les modèles
+3. Extraire les fichiers dans `backend/weights/`:
+   ```
+   backend/weights/
+   ├── detection/
+   │   ├── yolov3-detection_final.weights  (234MB)
+   │   └── yolov3-detection.cfg
+   └── ocr/
+       ├── yolov3-ocr_final.weights        (235MB)
+       └── yolov3-ocr.cfg
+   ```
+
+**Option 3: Modèles personnalisés**
+- Vous pouvez utiliser vos propres modèles YOLOv3 entraînés
+- Placez les fichiers `.weights` et `.cfg` dans les dossiers appropriés
+- Assurez-vous que les noms correspondent à ceux attendus dans le code
 
 ## ⚙️ Configuration
 

@@ -43,7 +43,13 @@ backend/tmp/
 backend/weights/
 backend/detection_logs.db
 
-# Large AI model files (>100MB)
+# Large AI model files (>100MB) - Available in GitHub Releases
 *.weights
 backend/weights/detection/
 backend/weights/ocr/
+
+# Note: Download AI model weights from GitHub Releases:
+# - yolov3-detection_final.weights (234MB)
+# - yolov3-ocr_final.weights (235MB)
+# - yolov3-detection.cfg
+# - yolov3-ocr.cfg
