@@ -30,6 +30,7 @@ Ce projet implémente un système complet de détection et reconnaissance automa
 ## ✨ Fonctionnalités
 
 ### 🔍 Détection et Reconnaissance
+
 - Détection automatique de plaques d'immatriculation dans les images
 - Reconnaissance OCR des caractères arabes et latins
 - Support des formats de plaques marocaines standard
@@ -37,18 +38,21 @@ Ce projet implémente un système complet de détection et reconnaissance automa
 - Calcul de confiance pour chaque détection
 
 ### 📊 Dashboard Analytique
+
 - Tableau de bord en temps réel avec métriques clés
 - Visualisation des performances du système
 - Historique des détections
 - Statistiques détaillées (précision, temps de traitement, taux de succès)
 
 ### 🖼️ Galerie Intelligente
+
 - Stockage et organisation des images traitées
 - Filtrage et recherche avancée
 - Système de favoris
 - Métadonnées complètes pour chaque détection
 
 ### 🌍 Informations Géographiques
+
 - Mapping automatique des codes région vers les villes marocaines
 - Affichage des informations géographiques contextuelles
 - Support de toutes les régions du Maroc
@@ -56,6 +60,7 @@ Ce projet implémente un système complet de détection et reconnaissance automa
 ## 🛠️ Technologies Utilisées
 
 ### Frontend
+
 - **Next.js 14** - Framework React avec App Router
 - **TypeScript** - Typage statique pour un code robuste
 - **Tailwind CSS** - Framework CSS utilitaire
@@ -64,6 +69,7 @@ Ce projet implémente un système complet de détection et reconnaissance automa
 - **Lucide React** - Icônes modernes et cohérentes
 
 ### Backend
+
 - **Python 3.8+** - Langage principal du backend
 - **Flask** - Framework web léger et flexible
 - **OpenCV** - Traitement d'images et vision par ordinateur
@@ -72,6 +78,7 @@ Ce projet implémente un système complet de détection et reconnaissance automa
 - **NumPy** - Calculs numériques optimisés
 
 ### Base de Données
+
 - **SQLite** - Base de données légère pour les logs de détection
 - **JSON** - Stockage des configurations et métadonnées
 
@@ -92,7 +99,7 @@ Ce projet implémente un système complet de détection et reconnaissance automa
 
 ### Prérequis
 
-- **Node.js** 18+ 
+- **Node.js** 18+
 - **Python** 3.8+
 - **pip** (gestionnaire de paquets Python)
 - **Git**
@@ -130,9 +137,10 @@ pip install -r requirements.txt
 ⚠️ **Important**: Les modèles IA sont requis pour le fonctionnement du système.
 
 **🚀 Méthode Simple (Recommandée)**
+
 1. **Aller aux Releases**: [GitHub Releases](https://github.com/IMADKHKHALIFI/MaroPlate-AI/releases)
 2. **Télécharger**: `ai-models-v1.0.zip` (~470MB)
-3. **Extraire**: Le fichier zip 
+3. **Extraire**: Le fichier zip
 4. **Copier**: Tous les fichiers vers `backend/weights/` en respectant cette structure:
    ```
    backend/weights/
@@ -145,6 +153,7 @@ pip install -r requirements.txt
    ```
 
 **⚡ Script Automatique (Alternative)**
+
 ```bash
 # Depuis la racine du projet
 python backend/setup_models.py
@@ -171,6 +180,7 @@ ALLOWED_EXTENSIONS=jpg,jpeg,png,bmp
 ### Configuration Backend
 
 Le backend se configure automatiquement, mais vous pouvez modifier :
+
 - Port d'écoute dans `api.py`
 - Chemins des modèles
 - Taille maximale des fichiers
@@ -180,13 +190,16 @@ Le backend se configure automatiquement, mais vous pouvez modifier :
 ### Démarrage du Système
 
 1. **Démarrer le Backend** :
+
 ```bash
 cd backend
 python api.py
 ```
+
 Le serveur démarre sur `http://localhost:5000`
 
 2. **Démarrer le Frontend** :
+
 ```bash
 # Dans un nouveau terminal, à la racine du projet
 npm run dev
@@ -195,6 +208,7 @@ pnpm dev
 # ou
 yarn dev
 ```
+
 L'application est accessible sur `http://localhost:3000`
 
 ### Utilisation de l'Interface
@@ -268,6 +282,7 @@ Body: image file
 ```
 
 **Réponse :**
+
 ```json
 {
   "status": "success",
@@ -300,6 +315,7 @@ GET /api/metrics
 ```
 
 **Réponse :**
+
 ```json
 {
   "total_detections": 150,
@@ -312,17 +328,20 @@ GET /api/metrics
 ## 🎯 Fonctionnalités Avancées
 
 ### Reconnaissance Multi-Format
+
 - Support des plaques anciennes et nouvelles
 - Reconnaissance des caractères arabes (ا، ب، ت، ث، ج، ح، خ، د...)
 - Détection des codes région (1-89)
 
 ### Optimisations Performances
+
 - Cache intelligent des résultats
 - Traitement asynchrone des images
 - Compression automatique des images
 - Gestion mémoire optimisée
 
 ### Interface Utilisateur
+
 - Design responsive (mobile, tablette, desktop)
 - Thème sombre moderne
 - Animations fluides
@@ -331,28 +350,34 @@ GET /api/metrics
 ## 🐛 Résolution de Problèmes
 
 ### Modèles IA manquants
+
 ```bash
 # Vérifier l'état des modèles
 python backend/setup_models.py check
 ```
+
 **Symptômes**: Erreur "modèle non trouvé" ou "weights file not found"
-**Solution**: 
+**Solution**:
+
 1. Télécharger `ai-models-v1.0.zip` depuis [GitHub Releases](https://github.com/IMADKHKHALIFI/MaroPlate-AI/releases)
 2. Extraire dans `backend/weights/`
 3. Vérifier avec `python backend/setup_models.py check`
 
 ### Backend ne démarre pas
+
 1. Vérifier l'installation de Python et pip
 2. Installer les dépendances : `pip install -r requirements.txt`
 3. Vérifier les chemins des modèles dans `weights/`
 
 ### Erreur de détection
+
 1. S'assurer que le backend fonctionne sur le port 5000
 2. Vérifier la connexion réseau
 3. Contrôler les logs dans la console du navigateur
 4. Vérifier que les modèles IA sont installés
 
 ### Performance lente
+
 1. Vérifier les ressources système (RAM, CPU)
 2. Optimiser la taille des images d'entrée
 3. Utiliser un SSD pour le stockage
@@ -371,6 +396,7 @@ Le système suit plusieurs métriques clés :
 ## 🔮 Roadmap
 
 ### Version 2.0 (À venir)
+
 - [ ] Support vidéo en temps réel
 - [ ] API REST complète
 - [ ] Base de données PostgreSQL
@@ -378,6 +404,7 @@ Le système suit plusieurs métriques clés :
 - [ ] Export des données (PDF, Excel)
 
 ### Version 2.1
+
 - [ ] Application mobile (React Native)
 - [ ] Intégration cloud (AWS/Azure)
 - [ ] Machine Learning Pipeline
@@ -399,25 +426,14 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 Pour toute question ou problème :
 
-- 📧 Email : support@platedetection.ma
-- 📱 Téléphone : +212 XXX XXX XXX
-- 💬 Discord : [Serveur Discord](https://discord.gg/...)
+- 📧 Email : imadelkhelyfy@gmail.com
 
 ## �‍💻 Développeur
 
 **IMAD EL KHELYFY**
+
 - 🎓 Étudiant en Master SDIA (Sciences des Données et Intelligence Artificielle)
-- 🏛️ Université de Meknès, Maroc
-- 📍 Meknès, Royaume du Maroc
-
-## �🙏 Remerciements
-
-- Équipe de développement IA
-- Communauté Open Source
-- Université de Meknès - Faculté des Sciences
-- Programme Master SDIA
-- Ministère de l'Intérieur - Maroc
-
----
+- 🏛️ Université Moulay Ismail "Faculté des Sciences " de Meknès, Maroc
+- 📍 Meknès, Royaume du Maroc---
 
 **Développé avec ❤️ par IMAD EL KHELYFY au Maroc** 🇲🇦
