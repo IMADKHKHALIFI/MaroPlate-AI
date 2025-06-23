@@ -40,3 +40,10 @@ backend/__pycache__/
 backend/*.pyc
 backend/.env
 backend/tmp/
+backend/weights/
+backend/detection_logs.db
+
+# Large AI model files (>100MB)
+*.weights
+backend/weights/detection/
+backend/weights/ocr/
