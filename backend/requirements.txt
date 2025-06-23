@@ -1,0 +1,12 @@
+# filepath: d:\Desktop\HHHHHH\project_bolt\backend\requirements.txt
+Flask==2.3.3
+Flask-CORS==4.0.0
+opencv-python==4.8.1.78
+numpy==1.24.3
+Pillow==10.0.1
+pytesseract==0.3.10
+Werkzeug==2.3.7
+pandas==2.0.3
+arabic-reshaper==3.0.0
+python-bidi==0.4.2
+base64io==1.0.3 
